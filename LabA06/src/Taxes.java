@@ -5,6 +5,8 @@
  */
 public class Taxes {
 	//declare instance variables
+	private int hours;
+	private double rate;
 
 	//Your code goes here
 
