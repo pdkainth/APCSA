@@ -9,9 +9,6 @@ public class Taxes {
 	private double hours;
 	private double rate;
 	
-	private double net;
-	private double totalTax;
-
 	//Your code goes here
 
 	//declare constants
@@ -43,7 +40,7 @@ public class Taxes {
 		System.out.printf("%.2f\n", this.computeSocSecurity());
 		System.out.print("State tax (4.00%): ");
 		System.out.printf("%.2f\n", this.computeStateTax());
-		System.out.printf("Net pay %.2f\n", net);
+		System.out.printf("Net pay %.2f\n", this.computeNetPay());
 
 		
 	}// end constructor
@@ -179,7 +176,7 @@ public class Taxes {
 	{
 
 		//Your code goes here
-		totalTax = this.computeFedTax() + this.computeSocSecurity() + this.computeStateTax();
+		double totalTax = this.computeFedTax() + this.computeSocSecurity() + this.computeStateTax();
 		return totalTax;
 	}//end method
 	
@@ -193,7 +190,7 @@ public class Taxes {
 	{
 		
 		//Your code goes here
-		net = this.computeGrossPay() - totalTax;
+		double net = this.computeGrossPay() - this.computeTotalTax();
 		return net;
 	}//end method
 	
