@@ -40,9 +40,7 @@ public class VirtualReality {
 		
 		qualityLevel = ql;
 		
-		
-		double myTime = 1000.0  / 90;
-		targetFrameTime = myTime;
+		targetFrameTime = 1000.0  / frames;
 		
 		LOW_THRESHOLD = 0.7 * targetFrameTime;
 		EXTRAPOLATE_THRESHOLD = 0.7 * targetFrameTime;
@@ -83,16 +81,18 @@ public class VirtualReality {
 		//return test;
 		
 	}	
+	
 	/**
 	 * Returns the y coordinate of the extrapolated point using linear 
 	 * extrapolation of two data points (x1, y1) and (x2, y2)
-	 * @param x1 - first frame number
-	 * @param y1 - first frame time
-	 * @param x2 - second frame number
-	 * @param y2 - second frame time
-	 * @param x - extrapolated frame
-	 * @return - extrapolated frame value
+	 * @param x1 - x coordinate of the first known data point
+	 * @param y1 - y coordinate of the first known data point
+	 * @param x2 - x coordinate of the second known data point
+	 * @param y2 - y coordinate of the second known data point
+	 * @param x  - x coordinate of the extrapolated point
+	 * @return   - y coordinate of the extrapolated point
 	 */
+	
 	private double extrapolate(double x1, double y1, double x2, double y2, double x) {
 		double extrapolate = y1 + ((x - x1) / (x2 - x1)) * (y2 - y1);
 		

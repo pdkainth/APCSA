@@ -12,7 +12,7 @@ public class Point {
 	private double y;
 	
 	/**
-	 * Default constructor sets point to (0,0)
+	 * Default constructor sets point to origin
 	 */
 	public Point() {
 		x = 0.0;
@@ -39,7 +39,7 @@ public class Point {
 	}
 	
 	/**
-	 * 
+	 * Returns the x coordinate of this point
 	 * @return - x coordinate of point
 	 */
 	public double getX() {
@@ -47,7 +47,7 @@ public class Point {
 	}
 	
 	/**
-	 * 
+	 * Returns the y coordinate of this point
 	 * @return - y coordinate of point
 	 */
 	public double getY() {
@@ -55,7 +55,7 @@ public class Point {
 	}
 	
 	/**
-	 * 
+	 * Sets the x coordinate of this point
 	 * @param x - x coordinate of point
 	 */
 	public void setX(double x) {
@@ -63,7 +63,7 @@ public class Point {
 	}
 	
 	/**
-	 * 
+	 * Sets the y coordinate of this point
 	 * @param y - y coordinate of point
 	 */
 	public void setY(double y) {
@@ -71,7 +71,7 @@ public class Point {
 	}
 	
 	/**
-	 * 
+	 * Sets the x and y coordinate of this point
 	 * @param x - x coordinate of point
 	 * @param y - y coordinate of point
 	 */
@@ -90,7 +90,7 @@ public class Point {
 	}
 	
 	/**
-	 * 
+	 * Determines the quadrant 0 (origin), 1, 2, 3
 	 * @return - quadrant the point is in
 	 */
 	public int quadrant() {
@@ -136,8 +136,8 @@ public class Point {
 	
 	/**
 	 * 
-	 * @param otherX - x coordinate
-	 * @param otherY - y coordinate
+	 * @param otherX - x coordinate of other point
+	 * @param otherY - y coordinate of othet point
 	 * @return - distance between Point and another set of coordinates
 	 */
 	public double distance(double otherX, double otherY) {
@@ -148,7 +148,7 @@ public class Point {
 	}
 	
 	/**
-	 * 
+	 * Determines if this point is equal to another
 	 * @param p - Point object
 	 * @return - true if coordinates of Point match p and false otherwise
 	 */
@@ -163,10 +163,12 @@ public class Point {
 	}
 	
 	/**
-	 * 
+	 * Compares the distance between this point and returns the point that is 
+	 * farthest away
 	 * @param p1 - first Point object
 	 * @param p2 - second Point object
-	 * @return - Point object that is farther
+	 * @return - Point object that is farther, null if they are equidistant
+	 * 
 	 */
 	public Point whichIsFarther(Point p1, Point p2) {
 		Point p3 = null;

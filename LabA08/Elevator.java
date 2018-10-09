@@ -14,6 +14,7 @@ public class Elevator {
 	
 	/**
 	 * Simulates going up an elevator based on the floor input
+	 * Prints out floor level
 	 */
 	public void simulate() {
 		System.out.print("Floor: ");
