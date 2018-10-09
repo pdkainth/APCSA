@@ -29,7 +29,7 @@ public class VirtualReality {
 	 * pre-condition: f0, f1, f2 > 0
 	 */
 	
-	public VirtualReality(double f0, double f1, double f2, double q1, double frames) {
+	public VirtualReality(double f0, double f1, double f2, double ql, double frames) {
 		
 		if(f0 > 0 && f1 > 0 && f2 > 0) {
 			frame0 = f0;
@@ -38,36 +38,51 @@ public class VirtualReality {
 			
 		}
 		
-		if(q1 >= 1 && q1 <= 10) {
-			qualityLevel = q1;
-		}
+		qualityLevel = ql;
 		
-		targetFrameTime = frames;
+		
+		double myTime = 1000.0  / 90;
+		targetFrameTime = myTime;
 		
 		LOW_THRESHOLD = 0.7 * targetFrameTime;
 		EXTRAPOLATE_THRESHOLD = 0.7 * targetFrameTime;
 		HIGH_THRESHOLD = 0.9 * targetFrameTime;
 		
-		adaptiveQualityAlgorithm();
 	}
 	
 	/**
 	 * Adjusts the quality level based on previous 3 frame times
 	 */
 	private void adaptiveQualityAlgorithm() {
+		//int test = 0;
+		double testQual = qualityLevel;
 		
 		if(frame2 > HIGH_THRESHOLD) {
 			qualityLevel -= 2;
-		} else if(frame2 > EXTRAPOLATE_THRESHOLD) { 
+			
+			//test = 1;
+			
+		} else if(frame2 > EXTRAPOLATE_THRESHOLD) {
+			/*System.out.println(this.extrapolate(0, frame0, 2, frame2, 3));
+			System.out.println(this.extrapolate(1, frame1, 2, frame2, 3));
+			System.out.println(frame2);
+			System.out.println(EXTRAPOLATE_THRESHOLD);
+			*/
 			if(Math.max(this.extrapolate(0, frame0, 2, frame2, 3), this.extrapolate(1, frame1, 2, frame2, 3)) > HIGH_THRESHOLD) {
-			qualityLevel -= 2;
+				qualityLevel -= 2;
 			}
+			
+			//test = 2;
+			
 		} else if(frame0 < LOW_THRESHOLD && frame1 < LOW_THRESHOLD && frame2 < LOW_THRESHOLD) {
-			qualityLevel++; 
+			qualityLevel++;
+			//test = 3;
+			
 		}
 		
-	}
-	
+		//return test;
+		
+	}	
 	/**
 	 * Returns the y coordinate of the extrapolated point using linear 
 	 * extrapolation of two data points (x1, y1) and (x2, y2)
@@ -90,11 +105,17 @@ public class VirtualReality {
 	 * @return the adjusted quality level
 	 */
 	public double getAdjustedQualityLevel() {
+		//System.out.println(adaptiveQualityAlgorithm());
+		//System.out.println("test");
 		adaptiveQualityAlgorithm();
 		
 		return qualityLevel;
 	}
 	
-	
+	/*public static void main(String args[]) {
+		VirtualReality myVirt = new VirtualReality(7.6, 7.3, 7.7, 5.0, 5);
+		System.out.println(myVirt.getAdjustedQualityLevel());
+	}
+	*/
 	
 }
