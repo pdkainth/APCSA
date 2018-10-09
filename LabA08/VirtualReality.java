@@ -17,25 +17,38 @@ public class VirtualReality {
 	private final double HIGH_THRESHOLD;
 	
 	/**
-	 * Parameter constructor
-	 * @param frame0 - frame time for first frame
-	 * @param frame1 - frame time for second frame
-	 * @param frame2 - frame time for third frame
-	 * @param quality - base quality
-	 * @param frameTime - target frame time
+	 * Constructor to initialize the three previous frame processing
+	 * times, current quality level of the video, and the target frame time
+	 * It also initializes all the threshold values
+	 * @param f0 - processing time for frame 0 (two frames ago) in ms
+	 * @param f1 - processing time for frame 1 (frame before last) in ms
+	 * @param f2 - processing time for frame 2 (last frame) in ms
+	 * @param ql - quality level of the video (ranges from 1 to 10)
+	 * @param frames - desired frames per second
+	 * pre-condition: 1 <= ql <= 10
+	 * pre-condition: f0, f1, f2 > 0
 	 */
-	public VirtualReality(double frame0, double frame1, double frame2, double quality, double frameTime) {
-		this.frame0 = frame0;
-		this.frame1 = frame1;
-		this.frame2 = frame2;
+	
+	public VirtualReality(double f0, double f1, double f2, double q1, double frames) {
 		
-		qualityLevel = quality;
+		if(f0 > 0 && f1 > 0 && f2 > 0) {
+			frame0 = f0;
+			frame1 = f1;
+			frame2 = f2;
+			
+		}
 		
-		targetFrameTime = frameTime;
+		if(q1 >= 1 && q1 <= 10) {
+			qualityLevel = q1;
+		}
+		
+		targetFrameTime = frames;
 		
 		LOW_THRESHOLD = 0.7 * targetFrameTime;
 		EXTRAPOLATE_THRESHOLD = 0.7 * targetFrameTime;
 		HIGH_THRESHOLD = 0.9 * targetFrameTime;
+		
+		adaptiveQualityAlgorithm();
 	}
 	
 	/**
@@ -56,7 +69,8 @@ public class VirtualReality {
 	}
 	
 	/**
-	 * 
+	 * Returns the y coordinate of the extrapolated point using linear 
+	 * extrapolation of two data points (x1, y1) and (x2, y2)
 	 * @param x1 - first frame number
 	 * @param y1 - first frame time
 	 * @param x2 - second frame number
@@ -71,8 +85,9 @@ public class VirtualReality {
 	}
 	
 	/**
-	 * 
-	 * @return - adjusted quality level
+	 * Calculates the adjusted quality level by applying the adaptive quality
+	 * algorithm
+	 * @return the adjusted quality level
 	 */
 	public double getAdjustedQualityLevel() {
 		adaptiveQualityAlgorithm();

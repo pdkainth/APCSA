@@ -15,8 +15,8 @@ public class Point {
 	 * Default constructor sets point to (0,0)
 	 */
 	public Point() {
-		x = 0;
-		y = 0;
+		x = 0.0;
+		y = 0.0;
 	}
 	
 	/**
@@ -166,21 +166,33 @@ public class Point {
 	 * 
 	 * @param p1 - first Point object
 	 * @param p2 - second Point object
-	 * @return - Point object that is closer
+	 * @return - Point object that is farther
 	 */
 	public Point whichIsFarther(Point p1, Point p2) {
-		Point p3;
+		Point p3 = null;
 		
 		double distance1 = this.distance(p1);
 		double distance2 = this.distance(p2);
 		
 		if(distance1 > distance2) {
 			p3 = p1;
-		} else {
+			
+		} else if(distance1 < distance2){
 			p3 = p2;
+			
 		}
 		
 		return p3;
+	}
+	
+	/**
+	 * Creates a formatted String of the object
+	 * @return point as a formatted string
+	 */
+	public String toString() {
+		String toString = String.format("(" + "%.2f" + ", " + "%.2f" + ")", x, y);
+		return toString;
+		
 	}
 	
 	
