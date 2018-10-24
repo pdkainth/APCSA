@@ -25,13 +25,11 @@ public class Pyramid {
 			
 			for(int k = 1; k <= astericks; k++) {
 				System.out.print("*");
+				if(k == astericks) {
+					System.out.println();
+				}
 			}
 
-			for(int i = 1; i <= spaces; i++) {
-				System.out.print(" ");
-			}
-
-			System.out.println();
 			rowCount++;
 
 		}
@@ -39,8 +37,5 @@ public class Pyramid {
 
 	}
 	
-/*	public static void main(String args[]) {
-		pyramid(5);
-	}
-*/
+
 }
