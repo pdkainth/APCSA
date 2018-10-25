@@ -24,27 +24,29 @@ public class Grades {
 		//Your code goes here
 		Scanner in = new Scanner(System.in);
 		String s = new String();
-		boolean test = true;
-		while(in.hasNext() && test) {
+		int test = 0;
+		System.out.print("Enter your grades: ");
+		while(test == 0) {
 			s = in.next();
-			s.toUpperCase();
-			if(s.equals("A")) {
+			
+			//System.out.println(s);
+			if(s.equals("A") || s.equals("a")) {
 				classesTaken++;
 				gpa += 4.0;
-			} else if(s.equals("B")) {
+			} else if(s.equals("B") || s.equals("b")) {
 				classesTaken++;
 				gpa += 3.0;
-			} else if(s.equals("C")) {
+			} else if(s.equals("C") || s.equals("c")) {
 				classesTaken++;
 				gpa += 2.0;
-			} else if(s.equals("D")) {
+			} else if(s.equals("D") || s.equals("d")) {
 				classesTaken++;
 				gpa += 1.0;
-			} else if( s.equals("F")) {
+			} else if( s.equals("F") || s.equals("f")) {
 				classesTaken++;
 				numFs++;
 			} else {
-				test = false;
+				test = 1;
 			}
 
 			//System.out.println(s + " class " + classesTaken + " GPA " + gpa);
@@ -62,27 +64,33 @@ public class Grades {
 	public void printMessage()
 	{
 		//Your code goes here
-		System.out.print("GPA = " + gpa + " ");
+		System.out.printf("GPA = %.2f\n", gpa);
 		
 		if((gpa >= 2.0) && (numFs == 0) && (classesTaken >= 4)) {
-			System.out.print("Eligible");
+			System.out.println("Eligible");
 		} else if(classesTaken < 4) {
-			System.out.print("Ineligible, taking less than 4 classes");
-		} else if(gpa < 2.0) {
-			System.out.print("Ineligible, gpa below 2.0");
-		} else if((gpa >= 2.0) && (numFs > 0)) {
-			System.out.print("Ineligible, gpa above 2.0 but has F grade");
+			System.out.println("Ineligible, taking less than 4 classes");
 		} else if((gpa <= 2.0) && (numFs > 0)) {
-			System.out.print("Ineligible, gpa below 2.0 and has F grade");
+			System.out.println("Ineligible, gpa below 2.0 and has F grade");
+		} else if((gpa >= 2.0) && (numFs > 0)) {
+			System.out.println("Ineligible, gpa above 2.0 but has F grade");
+		} else if(gpa < 2.0) {
+			System.out.println("Ineligible, gpa below 2.0");
 		}
+		
+		gpa = 0;
+		classesTaken = 0;
+		numFs = 0;
+	}
+	
+
+	
 
 
-	}
-	/*
-	public static void main(String args[]) {
-		Grades a = new Grades();
-		a.getGradesAndCalculateGPA();
-		a.printMessage();
-	}
-	*/
+//	public static void main(String args[]) {
+//		Grades a = new Grades();
+//		a.getGradesAndCalculateGPA();
+//		a.printMessage();
+//	}
+
 }
