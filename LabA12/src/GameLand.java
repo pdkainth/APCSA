@@ -50,58 +50,98 @@ public class GameLand {
     public void moving() 
     {
     	//Your code goes here
-    	while((positionA < FINISH) || (positionB < FINISH)) {
+    	while((positionA < FINISH) && (positionB < FINISH)) {
     		
     		//roll for A and update its value
     		roll();
-    		if(totalDiceRoll == 7) {
-    			if(positionA > 7) {
-    				positionA -= 7;
-    				
-    				System.out.println("Player A rolled a 7 >>> *******Player A is now at " + positionA);
-    				checkA();
-    				//
-    			} else {
-    				positionA = START;
-    				System.out.println("Player A rolled a 7 >>> *******Player A is now at " + positionA);
+    		
+    		if((positionA + totalDiceRoll) < FINISH) {
+    			
+        		if(totalDiceRoll == 7) {
+        			if(positionA > 7) {
+        				positionA -= 7;
+        				
+        				System.out.println("Player A rolled a 7 >>>  ******* Player A is now at " + positionA);
+        				checkA();
+        				//
+        			} else {
+        				positionA = START;
+        				System.out.println("Player A rolled a 7 >>>  ******* Player A is now at " + positionA);
 
-    			}
-    		} else if((totalDiceRoll != 2) || (totalDiceRoll != 12)) {
+        			}
+        		} else if((totalDiceRoll != 2) && (totalDiceRoll != 12)) {
+        			positionA += totalDiceRoll;
+        			
+    				
+
+        			checkA();
+        		
+        		} else if(totalDiceRoll == 2 || totalDiceRoll == 12) {
+        			
+        			System.out.println("Player A rolled a " + totalDiceRoll + " >>>  ** Player A is now at " + positionA);
+        		
+        		}
+
+    			
+    		} else {
+    			
     			positionA += totalDiceRoll;
+    			System.out.println("Player A rolled a " + totalDiceRoll + " >>> Player A WINS!!");
     			
-				System.out.println("Player A rolled a " + totalDiceRoll + " >>> Player A is now at " + positionA);
-
-    			checkA();
-    		
     		}
     		
     		
-    		//roll for B and update its value
+    		
+       	//roll for B and update its value
     		roll();
-    		if(totalDiceRoll == 7) {
-    			if(positionB > 7) {
-    				positionB -= 7;
+    		
+    		if(positionA  < FINISH) {
+    			
+    			if(positionB + totalDiceRoll < FINISH) {
+    				
+    				if(totalDiceRoll == 7) {
+    	    				if(positionB > 7) {
+    	    					positionB -= 7;
 
-    				System.out.println("Player B rolled a 7 >>> *******Player B is now at " + positionB);
-    				checkB();
+    	    					System.out.println("Player B rolled a 7 >>>  ******* Player B is now at " + positionB);
+    	    					checkB();
+    	    				
+    	    				} else {
+    	    					positionB = START;
+    	    					System.out.println("Player B rolled a 7 >>>  ******* Player B is now at " + positionB);
+
+    	    				}
+    	    			} else if((totalDiceRoll != 2) && (totalDiceRoll != 12)) {
+    	    				positionB += totalDiceRoll;
+
+ 
+    	    			
+    	    				checkB();
+    	    		
+    	    			} else if(totalDiceRoll == 2 || totalDiceRoll == 12) {
+    	    			
+    	    				System.out.println("Player B rolled a " + totalDiceRoll + " >>> ** Player B is now at " + positionB);
+    	    		
+    	    			}
+    				
     				
     			} else {
-    				positionB = START;
-    				System.out.println("Player B rolled a 7 >>> *******Player B is now at " + positionB);
-
+    	   			
+    				positionB += totalDiceRoll;
+        			System.out.println("Player B rolled a " + totalDiceRoll + " >>> Player B WINS!!");
+     
     			}
-    		} else if((totalDiceRoll != 2) || (totalDiceRoll != 12)) {
-    			positionB += totalDiceRoll;
-
-    			System.out.println("Player B rolled a " + totalDiceRoll + " >>> Player B is now at " + positionB);
     			
-    			checkB();
+    			
+    		} 
+ 
     		
-    		}
     		
     	}
 
-
+    	
+    	System.out.println("Player A is now at " + positionA);
+    	System.out.println("Player B is now at " + positionB);
     }
     
     private void checkA() {
@@ -109,7 +149,15 @@ public class GameLand {
     	//test to see if A is same as B (in this case, A is newer, will bump B)
 		if((positionA == positionB) && (positionA != START)) {
 			positionB = START;
+			 if(totalDiceRoll != 7) {
+					System.out.println("Player A rolled a " + totalDiceRoll + " >>> - BUMPED - Player A is now at " + positionA);
+			 }
 			
+		} else {
+			if(totalDiceRoll != 7) {
+				System.out.println("Player A rolled a " + totalDiceRoll + " >>> Player A is now at " + positionA);
+			}
+
 		}
 		
 		
@@ -121,9 +169,33 @@ public class GameLand {
     	//test to see if B is same as A (in this case, B is newer, will bump A)
 		if((positionA == positionB) && (positionB != START)) {
 			positionA = START;
+			if(totalDiceRoll != 7) {
+				System.out.println("Player B rolled a " + totalDiceRoll + " >>> - BUMPED - Player B is now at " + positionB);
+			}
+
+		} else {
+			if(totalDiceRoll != 7) {
+				System.out.println("Player B rolled a " + totalDiceRoll + " >>> Player B is now at " + positionB);
+			}
+
 		}
     	
     }
+    
+//    public static void main(String[] args)
+//    {        
+//		System.out.println("GameLand 2018-19\n");
+//		Scanner sc = new Scanner(System.in);
+//		System.out.print("Round 1: Enter the seed: ");
+//		int seed = sc.nextInt();
+//        	GameLand game = new GameLand(seed);
+//    		game.moving();
+//    		System.out.print("Round 2: Enter the seed: ");
+//		seed = sc.nextInt();
+//        	game = new GameLand(seed);
+//    		game.moving();
+//    } 
+    
 
         
 }
