@@ -15,6 +15,10 @@ public class Correlation {
 	private final int COUNT = 30;
 	private double r = 0;
 	
+	/**
+	 * This method calculates the average of the x and y variables (payroll and wins)
+	 * @param sc scanner object
+	 */
 	public void average(Scanner sc) {
 		double totalX = 0;
 		double totalY = 0;
@@ -31,13 +35,13 @@ public class Correlation {
 		System.out.printf("Average of x variable = %.2f\n", averageX);
 		System.out.printf("Average of y variable = %.2f\n", averageY);
 		
-		/*
-		while(sc.hasNext()) {
-			System.out.println(sc.nextInt());
-		}
-		*/
+		
 	}
 	
+	/**
+	 * This method calculates the standard deviation of the x and y variables (payroll and wins) using the averages
+	 * @param sc scanner object
+	 */
 	public void standardDeviation(Scanner sc) {
 		double totalX = 0;
 		double totalY = 0;
@@ -55,6 +59,11 @@ public class Correlation {
 
 	}
 	
+	/**
+	 * This method calculates the correlation coefficient between the x and y variables (payroll and wins) using the average and the standard deviation
+	 * @param sc scanner object
+	 * @return correlation coefficient
+	 */
 	public double correlationCoefficient(Scanner sc) {
 		double corrTotal = 0;
 		
