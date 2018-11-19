@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="KochCurve/src"/>
+	<classpathentry kind="src" path="LabA03/src"/>
+	<classpathentry kind="src" path="LabA04/src"/>
+	<classpathentry kind="src" path="LabA06/src"/>
+	<classpathentry kind="src" path="LabA07/src"/>
+	<classpathentry kind="src" path="LabA08"/>
+	<classpathentry kind="src" path="LabA09/src"/>
+	<classpathentry kind="src" path="LabA12/src"/>
+	<classpathentry kind="src" path="SemesterFinal/src"/>
+	<classpathentry kind="src" path="Summer Homework/src"/>
+	<classpathentry kind="src" path="TestLabs/src"/>
+	<classpathentry kind="lib" path="Benzene.jar"/>
+	<classpathentry kind="lib" path="DrawHouse.jar"/>
+	<classpathentry kind="lib" path="KochCurve/KochCurve.jar"/>
+	<classpathentry kind="lib" path="MathFunDriver.jar"/>
+	<classpathentry kind="output" path="KochCurve/bin"/>
+</classpath>
