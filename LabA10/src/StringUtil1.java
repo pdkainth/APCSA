@@ -89,6 +89,7 @@ public class StringUtil1
 	private static String change(String original, String lookFor, String change) {
 		
 		String capsOrig = original.toUpperCase();
+		
 		String capsLook = lookFor.toUpperCase();
 		int index = capsOrig.indexOf(capsLook);
 
