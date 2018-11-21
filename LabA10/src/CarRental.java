@@ -6,7 +6,7 @@
  * Period: 4
  *
  */
-/** Write a one sentence summary about your class
+/** CarRental class turns the license plate number into a car rental number
  */
 public class CarRental {
 	//Declare instance variables here

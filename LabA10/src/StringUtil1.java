@@ -6,17 +6,15 @@
  * Period: 4
  *
  */
-/** Write a one sentence summary about your class
+/** A Sring utility class that operates on a string
  */
 public class StringUtil1 
-{	//Declare instance variables here
-	private static int palCount = 0;
-	private static String palStr = "";
-	
+{	//Declare instance variables here	
 	
 	/**
-	 * Write a one sentence description of the method
-	 * Describe the parameters and return values
+	 * Method reverses a string
+	 * @param str string to reverse
+	 * @return reversed string
 	 */
 	public static String reverse(String str)
 	{
@@ -31,10 +29,10 @@ public class StringUtil1
 	
 	
 	/**
-	 * Write a one sentence description of the method
-	 * Describe the parameters and return values
+	 * Method determines if string is a palindrome
+	 * @param str string to test
+	 * @return true/false whether string is palindrome
 	 */
-	
 	public static boolean palindrome(String str)
 	{
 		//Your code goes here
@@ -47,10 +45,10 @@ public class StringUtil1
 	
 	
 	/**
-	 * Write one sentence description of the method
-	 * Describe the parameters and return values
+	 * Method converts string into shorthand
+	 * @param s string to be converted
+	 * @return shorthand version of string
 	 */
-
 	public static String shorthand(String s)
 	{
 		//Your code goes here
@@ -67,6 +65,11 @@ public class StringUtil1
 		return postStr;
 	}
 	
+	/**
+	 * Method eliminates non alpha-numeric characters from string to create input
+	 * @param str string to be evaluated
+	 * @return cleaned string
+	 */
 	private static String palString(String str) {
 		
 		if (str.length() == 0) {
@@ -85,12 +88,18 @@ public class StringUtil1
 		return goodStr + palString(str.substring(1));
 	}
 	
-	//make private after testing
-	private static String change(String original, String lookFor, String change) {
+	/**
+	 * Method changes keywords to shortened versions
+	 * @param original original string
+	 * @param look word to look
+	 * @param change word to change
+	 * @return changed string
+	 */
+	private static String change(String original, String look, String change) {
 		
 		String capsOrig = original.toUpperCase();
 		
-		String capsLook = lookFor.toUpperCase();
+		String capsLook = look.toUpperCase();
 		int index = capsOrig.indexOf(capsLook);
 
 		if(index < 0) {
@@ -98,14 +107,9 @@ public class StringUtil1
 		}
 
 		String preString = original.substring(0, index);
-		String postString = original.substring(index + lookFor.length());
+		String postString = original.substring(index + look.length());
 		
-		return preString + change + change(postString, lookFor, change);
+		return preString + change + change(postString, look, change);
 	}
 	
-	public static void main(String args[]) {
-		//System.out.println(shorthand("Why you do dis?"));
-		System.out.println(change("To YoU aND FOR you, AMy", "you", "u"));
-
-	}
 }

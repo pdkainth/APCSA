@@ -12,8 +12,9 @@ public class StringUtil2
 {	//Declare instance variables here	
 	
 	/**
-	 * Write a one sentence description of the method
-	 * Describe the parameters and return values
+	 * Method reverses a string
+	 * @param str string to reverse
+	 * @return reversed string
 	 */
 	public static String reverse(String str)
 	{
@@ -28,10 +29,10 @@ public class StringUtil2
 	
 	
 	/**
-	 * Write a one sentence description of the method
-	 * Describe the parameters and return values
+	 * Method determines if string is a palindrome
+	 * @param str string to test
+	 * @return true/false whether string is palindrome
 	 */
-	
 	public static boolean palindrome(String str)
 	{
 		//Your code goes here
@@ -44,10 +45,10 @@ public class StringUtil2
 	
 	
 	/**
-	 * Write one sentence description of the method
-	 * Describe the parameters and return values
+	 * Method converts string into shorthand
+	 * @param s string to be converted
+	 * @return shorthand version of string
 	 */
-
 	public static String shorthand(String s)
 	{
 		//Your code goes here
@@ -64,6 +65,11 @@ public class StringUtil2
 		return postStr;
 	}
 	
+	/**
+	 * Method eliminates non alpha-numeric characters from string to create input
+	 * @param str string to be evaluated
+	 * @return cleaned string
+	 */
 	private static String palString(String str) {
 		
 		if (str.length() == 0) {
@@ -82,12 +88,18 @@ public class StringUtil2
 		return goodStr + palString(str.substring(1));
 	}
 	
-	//make private after testing
-	private static String change(String original, String lookFor, String change) {
+	/**
+	 * Method changes keywords to shortened versions
+	 * @param original original string
+	 * @param look word to look
+	 * @param change word to change
+	 * @return changed string
+	 */
+	private static String change(String original, String look, String change) {
 		
 		String capsOrig = original.toUpperCase();
 		
-		String capsLook = lookFor.toUpperCase();
+		String capsLook = look.toUpperCase();
 		int index = capsOrig.indexOf(capsLook);
 
 		if(index < 0) {
@@ -95,11 +107,10 @@ public class StringUtil2
 		}
 
 		String preString = original.substring(0, index);
-		String postString = original.substring(index + lookFor.length());
+		String postString = original.substring(index + look.length());
 		
-		return preString + change + change(postString, lookFor, change);
+		return preString + change + change(postString, look, change);
 	}
-
 
 
 	  /** 
@@ -118,8 +129,8 @@ public class StringUtil2
 	  * 3. But, if englishWord is capitalized, then capitalize end and
 	  * "uncapitalize" start.
 	  *
-	  * 
-	  @return piglatin version of text as a String 
+	  * @param text text to be converted to piglatin
+	  * @return piglatin version of text as a String 
 	  */
 	  public static String phraseToPigLatin(String text) 
 	  {
@@ -159,6 +170,11 @@ public class StringUtil2
 		  		  
 	  }
 	  
+	  /**
+	   * Method takes individual word and converts to piglatin
+	   * @param word word to be converted
+	   * @return converted word
+	   */
 	  private static String pigLatinWord(String word) {
 		  if(word.length() == 0) {
 			  return word;
@@ -176,6 +192,11 @@ public class StringUtil2
 		  }
 	  }
 	  
+	  /**
+	   * Method returns index of the first vowel
+	   * @param word word to evaluate
+	   * @return index of the first vowel
+	   */
 	  private static int firstVowel(String word) {
 		  
 		  int firstVowel = word.length();
@@ -194,6 +215,13 @@ public class StringUtil2
 		  }
 	  }
 	  
+	  /**
+	   * Method finds the index of the given vowel and compares with original index
+	   * @param word word to be evaluates
+	   * @param vowel vowel to be searched 
+	   * @param original original index
+	   * @return index of the vowel that occurs first
+	   */
 	  private static int firstVowelHelper(String word, String vowel, int original) {
 		  String temp = word.toLowerCase();
 		  int firstVowelTest = temp.indexOf(vowel);
@@ -205,6 +233,11 @@ public class StringUtil2
 		  
 	  }
 	  
+	  /**
+	   * Method converts word that does not start with a vowel into a piglatin word
+	   * @param word word to be converted
+	   * @return piglatin word
+	   */
 	  private static String pigStartEnd(String word) {
 		  int first = firstVowel(word);
 		  String start = word.substring(0, first);
@@ -220,8 +253,6 @@ public class StringUtil2
 	  }
 	  
 	  
-	  public static void main(String args[]) {
-		  System.out.println(phraseToPigLatin("and"));
-	  }
+	  
 	
 }

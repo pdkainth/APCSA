@@ -1,6 +1,6 @@
 /**
  *
- * @author Your name Prabhdeep Kainth
+ * @author Prabhdeep Kainth
  * Period #4
  */
 
