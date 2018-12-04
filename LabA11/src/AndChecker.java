@@ -17,8 +17,11 @@ public class AndChecker implements Checker
 	public AndChecker(Checker firstChecker, Checker secondChecker)
 	{
 		//Your code goes here
-
+		myFirstChecker = firstChecker;
+		mySecondChecker = secondChecker;
 	}// end constructor
+	
+	
 	/**
 	 * Method to check if the given string is accepted
 	 * by both of the Checker objects
@@ -29,7 +32,7 @@ public class AndChecker implements Checker
 	public boolean accept(String str)
 	{
 		//Your code goes here
-
+		return (myFirstChecker.accept(str) && mySecondChecker.accept(str));
 
 	}// end accept
 
