@@ -39,23 +39,88 @@
 	<section name="javadoc">
 		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>
-		<item value="/Users/kainthprabhdeep9162/Desktop/PrabhdeepKainth/TestLabs/javadoc.xml" key="antpath"/>
+		<item value="C:\Users\pdkainth\APCSA\LabA11\javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
 		<item value="true" key="author"/>
 		<item value="false" key="nodeprecated"/>
 		<item value="false" key="nonavbar"/>
 		<item value="" key="docletpath"/>
-		<item value="/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/bin/javadoc" key="javadoc_command_history"/>
+		<item value="C:\Program Files\Java\jdk1.8.0_191\bin\javadoc.exe;/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/bin/javadoc" key="javadoc_command_history"/>
 		<item value="1.8" key="source"/>
 		<item value="true" key="version"/>
 		<item value="" key="docletname"/>
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="/Users/kainthprabhdeep9162/Desktop/PrabhdeepKainth/TestLabs/doc" key="destdir"/>
+		<item value="C:\Users\pdkainth\APCSA\LabA11\doc" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
+			<section name="LabA11">
+				<item value="C:\Users\pdkainth\APCSA\LabA11\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\LabA11\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="LabA12">
+				<item value="C:\Users\pdkainth\APCSA\LabA12\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\LabA12\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="LabA03">
+				<item value="C:\Users\pdkainth\APCSA\LabA03\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\LabA03\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="TestLabs">
+				<item value="C:\Users\pdkainth\APCSA\TestLabs\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\TestLabs\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="SemesterFinal">
+				<item value="C:\Users\pdkainth\APCSA\SemesterFinal\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\SemesterFinal\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="LabA10">
+				<item value="C:\Users\pdkainth\APCSA\LabA10\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\LabA10\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="LabA08">
+				<item value="C:\Users\pdkainth\APCSA\LabA08\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\LabA08\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="LabA09">
+				<item value="C:\Users\pdkainth\APCSA\LabA09\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\LabA09\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="LabA04">
+				<item value="C:\Users\pdkainth\APCSA\LabA04\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\LabA04\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="LabA06">
+				<item value="C:\Users\pdkainth\APCSA\LabA06\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\LabA06\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="LabA07">
+				<item value="C:\Users\pdkainth\APCSA\LabA07\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\LabA07\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="KochCurve">
+				<item value="C:\Users\pdkainth\APCSA\KochCurve\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\KochCurve\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Summer Homework">
+				<item value="C:\Users\pdkainth\APCSA\Summer Homework\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\Summer Homework\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
 		</section>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
@@ -78,9 +143,9 @@
 		<item value="2" key="pageIndex"/>
 	</section>
 	<section name="JavadocWizardDialog">
-		<item value="600" key="DIALOG_WIDTH"/>
-		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
-		<item value="534" key="DIALOG_HEIGHT"/>
+		<item value="1018" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-36|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="780" key="DIALOG_HEIGHT"/>
 		<item value="724" key="DIALOG_X_ORIGIN"/>
 		<item value="174" key="DIALOG_Y_ORIGIN"/>
 	</section>
