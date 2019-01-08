@@ -1,9 +1,14 @@
 /**
  * 
- * @author Your name
- * Period #
+ * @author Prabhdeep Kainth
+ * Period # 4
  */
 public class CheckingAccountDriver {
+	
+	/**
+	 * Main method to run
+	 * @param args - arguments
+	 */
 	public static void main(String[] args)
 	{
 		// Your code goes here
