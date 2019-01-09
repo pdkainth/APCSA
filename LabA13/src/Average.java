@@ -18,20 +18,36 @@ public class Average {
 		fileName = name;
 	}
 	
-	private void scanDataAndCalculateAverage() {
+	public double scanDataAndCalculateAverage() {
 		Scanner in;
+		int count = 0;
 		try {
+
 			in = new Scanner(new File(fileName));
 			
 			if(!in.hasNext()) {
-				throw new IOException(fileName + " is empty");
+				throw new NullPointerException(fileName + " is empty");
 			}
 			
+			if(!in.hasNextInt()) {
+				throw new IllegalArgumentException(fileName + " does not have numeric data");
+			} 
+			
+			while(in.hasNext()) {
+					total += in.nextInt();
+					count++;
+			}
+
+			return total / (double)count;
 			
 		} catch (IOException e) {
-			System.out.println(e.getMessage());
+			
+			System.out.println("Error: " + fileName + " (No such file or directory)");
+			
 		}
 		
+		return 0.0;
+
 	}
 	
 }
