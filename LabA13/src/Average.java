@@ -14,10 +14,18 @@ public class Average {
 	private long total = 0;
 	private String fileName;
 	
+	/**
+	 * Parameter constructor for Average class
+	 * @param name - name of file
+	 */
 	public Average (String name) {
 		fileName = name;
 	}
 	
+	/**
+	 * Scans the data and calculates the average
+	 * @return - average of the data
+	 */ 
 	public double scanDataAndCalculateAverage() {
 		Scanner in;
 		int count = 0;
