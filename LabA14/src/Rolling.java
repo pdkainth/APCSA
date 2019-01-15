@@ -45,7 +45,7 @@ public class Rolling {
     		System.out.println(first + " " + second + " " + third);
     		
     		if(first != second && second != third && first != third) {
-    			System.out.println("count = " + count);
+    			System.out.println("Rolled " + count + " times before all the roles were different");
     			same = false;
     		} else {
     			count++;
