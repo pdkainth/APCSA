@@ -23,7 +23,7 @@ public class Rolling {
     private int roll() 
     { 
         //Your code goes here
-    	return rand.nextInt(5) + 1;
+    	return rand.nextInt(6) + 1;
     }
     
     /**  
@@ -45,7 +45,7 @@ public class Rolling {
     		System.out.println(first + " " + second + " " + third);
     		
     		if(first != second && second != third && first != third) {
-    			System.out.println("Rolled " + count + " times before all the roles were different");
+    			System.out.println("Rolled " + count + " times before all the rolls were different");
     			same = false;
     		} else {
     			count++;
