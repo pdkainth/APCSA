@@ -10,7 +10,6 @@ INDEX VERSION 1.131+C:\Users\pdkainth\APCSA\.metadata\.plugins\org.eclipse.jdt.c
 930900409.index
 3273046749.index
 4238059749.index
-2723144495.index
 4252593891.index
 623921101.index
 3335633474.index

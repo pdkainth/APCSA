@@ -60,6 +60,13 @@ public class Rolling {
 
     /** 
      * Answer to question 3 goes here
+     * when loop ends, this will be true
+     * 
+     * (first == second) || (second == third) || (first == third)
+     * 
+     * negation will be !(first == second) || (second == third) || (first == third)
+     * and after using demorgans law, it becomes,
+     * first != second && second != third && first != third
      */
   
 } 
