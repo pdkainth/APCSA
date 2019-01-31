@@ -43,7 +43,7 @@ public class Eratosthenes {
 	
 	/**
 	 * returns a list of primes less than or equal to n
-	 * @return
+	 * @return - list of primes
 	 */
 	public int[] listOfPrimes()
 	{
@@ -81,6 +81,7 @@ public class Eratosthenes {
 	/**
 	 * Returns a string containing the prime numbers and the number of prime numbers
 	 * in the list
+	 * @return - String representation of Eratosthenes object
 	 */
 	public String toString()
 	{
@@ -95,10 +96,11 @@ public class Eratosthenes {
 		return output;
 	}
 
-
+	/*
 	public static void main(String[] args) {
 		Eratosthenes e = new Eratosthenes(30);
 		e.listOfPrimes();
 		
 	}
+	*/
 }

@@ -40,22 +40,48 @@ public class Goldbach {
 		
 		
 		output = N + "";
+		boolean hasPrime = false;
 		for(int i = 0; i < prime.length; i++) {
+			secondPrime = 0;
 			firstPrime = prime[i];
 			int maybeSecond = N - firstPrime;
-			for(int j = 0; j < prime.length; j++) {
-				if(prime[j] == maybeSecond) {
-					secondPrime = prime[j];
-					break;
+			int primeThresh = 0;
+			if(N % 2 == 0) {
+				primeThresh = N / 2;
+			} else {
+				primeThresh = (N / 2) + 1;
+			}
+		
+			if(firstPrime <= primeThresh && firstPrime <= maybeSecond) {
+				for(int j = 0; j < prime.length; j++) {
+					if(prime[j] == maybeSecond) {
+						secondPrime = prime[j];
+						break;
+					}
 				}
+					
 			}
 			
 			if((firstPrime + secondPrime == N) && secondPrime != 0) {
+				hasPrime = true;
 				output += " = " + firstPrime + " + " + secondPrime;
 			}
 		}
 		
-		
+		if(!hasPrime) {
+			output += " not expressible as sum of two primes";
+		}
 		return output;
 	}
+	
+	/*
+	public static void main(String[] args) {
+		Goldbach g;
+		
+		for(int i = 1; i <= 10; i++) {
+			g = new Goldbach(i);
+			System.out.println(g.sumOfTwoPrimes());
+		}
+	}
+	*/
 }
