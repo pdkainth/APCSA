@@ -1,12 +1,12 @@
-/**
- * @author Your name
- * @period #
- */
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-
+/**
+ * @author Prabhdeep Kainth
+ * period #4
+ */
 public class Life {
 	//instance variables
 	private final int LENGTH = 20;
