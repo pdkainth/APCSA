@@ -39,7 +39,7 @@
 	<section name="javadoc">
 		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>
-		<item value="C:\Users\pdkainth\APCSA\Lab AB23\javadoc.xml" key="antpath"/>
+		<item value="C:\Users\pdkainth\APCSA\LabA21\javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
 		<item value="true" key="author"/>
@@ -53,7 +53,7 @@
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="C:\Users\pdkainth\APCSA\Lab AB23\doc" key="destdir"/>
+		<item value="C:\Users\pdkainth\APCSA\LabA21\doc" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
 			<section name="LabA11">
@@ -99,6 +99,11 @@
 			<section name="LabA10">
 				<item value="C:\Users\pdkainth\APCSA\LabA10\javadoc.xml" key="antpath"/>
 				<item value="C:\Users\pdkainth\APCSA\LabA10\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="LabA21">
+				<item value="C:\Users\pdkainth\APCSA\LabA21\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pdkainth\APCSA\LabA21\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 			<section name="LabA08">
@@ -163,9 +168,9 @@
 		<item value="2" key="pageIndex"/>
 	</section>
 	<section name="JavadocWizardDialog">
-		<item value="816" key="DIALOG_WIDTH"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-30|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="693" key="DIALOG_HEIGHT"/>
+		<item value="713" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-24|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="558" key="DIALOG_HEIGHT"/>
 		<item value="724" key="DIALOG_X_ORIGIN"/>
 		<item value="174" key="DIALOG_Y_ORIGIN"/>
 	</section>
