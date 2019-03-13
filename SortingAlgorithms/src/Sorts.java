@@ -134,20 +134,47 @@ public class Sorts{
   	int b = 0;
   	int c = 0;
   	int startIndex = first;
+
+
+//  	while(b < firstLength && c < secondLength) {
+//  		
+//  		steps += 3;
+//  		if(left[b].compareTo(right[c]) <= 0) {
+//  			a.set(startIndex, left[b]);
+//  			b++;
+//  		} else {
+//  			
+//  			a.set(startIndex, right[c]);
+//  			c++;
+//  		}
+//  		startIndex++;
+//  		steps++;
+//  	}
+
+  	Comparable leftVal = left[b];
+  	Comparable rightVal = right[c];
+		//steps += 2;
   	
-  	while(b < firstLength && c < secondLength) {
-  		
-  		if(left[b].compareTo(right[c]) <= 0) {
-  			steps += 2;
-  			a.set(startIndex, left[b]);
-  			b++;
-  		} else {
-  			steps ++;
-  			a.set(startIndex, right[c]);
-  			c++;
-  		}
-  		startIndex++;
-  	}
+  	while((b < firstLength) && (c < secondLength)) {
+  		steps+=2;
+			if(leftVal.compareTo(rightVal) <= 0) {
+				a.set(startIndex, leftVal);
+				b++;
+				if (b < firstLength) {
+					//steps++;
+					leftVal = left[b];
+				}
+			} else {
+				a.set(startIndex, rightVal);
+				c++;
+				if (c < secondLength) {
+					//steps++;
+					rightVal = right[c];
+				}
+			}
+			startIndex++;
+		}
+  	
   	
   	while(b < firstLength) {
 			steps ++;
@@ -157,7 +184,7 @@ public class Sorts{
   	}
   	
   	while(c < secondLength) {
-			steps ++;
+			//steps ++;
   		a.set(startIndex, right[c]);
   		c++;
   		startIndex++;
