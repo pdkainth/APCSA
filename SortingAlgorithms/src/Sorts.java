@@ -11,9 +11,7 @@ public class Sorts{
   private long steps;
 
   /**
-   *  Description of Constructor
-   *
-   * @param  list  Description of Parameter
+   *  Sets the count to 0
    */
   public Sorts(){
     steps = 0;
@@ -101,7 +99,7 @@ public class Sorts{
   }
 
 
- /**
+  /**
    *  Takes in entire vector, but will merge the following sections
    *  together:  Left sublist from a[first]..a[mid], right sublist from
    *  a[mid+1]..a[last].  Precondition:  each sublist is already in
@@ -112,86 +110,59 @@ public class Sorts{
    * @param  mid    midpoint index of range of values to be sorted
    * @param  last   last index of range of values to be sorted
    */
-  private void merge(ArrayList <Comparable> a, int first, int mid, int last){
-	//Add your code here
+  private void merge(ArrayList<Comparable> a, int first, int mid, int last) {
   	
-  	int firstLength = mid - first + 1;
-  	int secondLength = last - mid;
+  	ArrayList <Comparable> left = new ArrayList();
+  	ArrayList <Comparable> right = new ArrayList();
   	
-  	Comparable[] left = new Comparable[firstLength];
-  	Comparable[] right = new Comparable[secondLength];
-  	
-  	for(int i = 0; i < firstLength; i++) {
+  	for(int i = first; i <= mid; i++) {
   		steps++;
-  		left[i] = a.get(first + i);
+  		left.add(a.get(i));
   	}
-
-  	for(int j = 0; j < secondLength; j++) {
+  
+  	for(int j = mid + 1; j <= last; j++) {
   		steps++;
-  		right[j] = a.get(mid + j + 1);
-  	}
-
-  	int b = 0;
-  	int c = 0;
-  	int startIndex = first;
-
-
-//  	while(b < firstLength && c < secondLength) {
-//  		
-//  		steps += 3;
-//  		if(left[b].compareTo(right[c]) <= 0) {
-//  			a.set(startIndex, left[b]);
-//  			b++;
-//  		} else {
-//  			
-//  			a.set(startIndex, right[c]);
-//  			c++;
-//  		}
-//  		startIndex++;
-//  		steps++;
-//  	}
-
-  	Comparable leftVal = left[b];
-  	Comparable rightVal = right[c];
-		//steps += 2;
-  	
-  	while((b < firstLength) && (c < secondLength)) {
-  		steps+=2;
-			if(leftVal.compareTo(rightVal) <= 0) {
-				a.set(startIndex, leftVal);
-				b++;
-				if (b < firstLength) {
-					//steps++;
-					leftVal = left[b];
-				}
-			} else {
-				a.set(startIndex, rightVal);
-				c++;
-				if (c < secondLength) {
-					//steps++;
-					rightVal = right[c];
-				}
-			}
-			startIndex++;
-		}
-  	
-  	
-  	while(b < firstLength) {
-			steps ++;
-  		a.set(startIndex, left[b]);
-  		b++;
-  		startIndex++;
+  		right.add(a.get(j));
   	}
   	
-  	while(c < secondLength) {
-			//steps ++;
-  		a.set(startIndex, right[c]);
-  		c++;
-  		startIndex++;
-  	}
+  	int leftInd = 0;
+  	int rightInd = 0;
+  	int sortInd = first;
   	
+  	while(sortInd <= last) {
+  		
+  		if(leftInd >= left.size()) {
+  			steps+=2;
+  			a.set(sortInd, right.get(rightInd));
+  			rightInd++;
+  		} else if(rightInd >= right.size()) {
+  			steps+=2;
+  			a.set(sortInd, left.get(leftInd));
+  			leftInd++;
+  		} else {
+  			
+    		Comparable leftVal = left.get(leftInd);
+    		Comparable rightVal = right.get(rightInd);
+  			steps+=2;
+    		
+  			steps++;
+    		if((leftVal.compareTo(rightVal) <= 0)) {
+    			steps++;
+    			a.set(sortInd, leftVal);
+    			leftInd++;
+    		} else {
+    			steps++;
+    			a.set(sortInd, rightVal);
+    			rightInd++;
+    		}
+  		}
+  		
+			sortInd++;
+  	}
+
   }
 
+  
   /**
    *  Recursive mergesort of an array of integers
    *
@@ -201,7 +172,16 @@ public class Sorts{
    */
   public void mergeSort(ArrayList <Comparable> a, int first, int last){
 	//Add your code here
-  	if(first < last) {
+  	if(first == last){
+  		
+  	} else if((first - last) == 1) {
+  	
+  		steps += 3;
+  		if(a.get(first).compareTo(a.get(last)) > 0) {
+  			swap(a, first, last);
+  		} 
+  		
+  	} else {
     	int mid =(first + last) / 2;
     	
     	mergeSort(a, first, mid);
@@ -256,9 +236,10 @@ public class Sorts{
   	
 	
   }
+  
   /**
    *  Accessor method to return the current value of steps
-   *
+   * @return the amount of steps 
    */
   public long getStepCount(){
     return steps;
