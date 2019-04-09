@@ -159,7 +159,8 @@ public class Sorts{
   		
 			sortInd++;
   	}
-
+  	
+  	printArray(a);
   }
 
   
@@ -176,9 +177,11 @@ public class Sorts{
   		
   	} else if((first - last) == 1) {
   	
+  		printArray(a);
   		steps += 3;
   		if(a.get(first).compareTo(a.get(last)) > 0) {
   			swap(a, first, last);
+  			printArray(a);
   		} 
   		
   	} else {
@@ -269,4 +272,11 @@ public class Sorts{
   	list.set(a, list.get(b));
   	list.set(b, temp);
  }
+  
+  public void printArray(ArrayList <Comparable> a) {
+  	for(Comparable b : a) {
+  		System.out.print(b + "  ");
+  	}
+  	System.out.println();
+  }
 }

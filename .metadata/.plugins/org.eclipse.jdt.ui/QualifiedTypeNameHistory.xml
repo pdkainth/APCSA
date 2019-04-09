@@ -19,6 +19,7 @@
 <fullyQualifiedTypeName name="Goldbach"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthSeparatorUI"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="SecretMessage"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="IndexedWord"/>
 </qualifiedTypeNameHistroy>
