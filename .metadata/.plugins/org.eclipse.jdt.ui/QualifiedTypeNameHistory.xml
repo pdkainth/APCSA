@@ -22,4 +22,13 @@
 <fullyQualifiedTypeName name="SecretMessage"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="IndexedWord"/>
+<fullyQualifiedTypeName name="PasswordSecurityHandler"/>
+<fullyQualifiedTypeName name="StringHandler"/>
+<fullyQualifiedTypeName name="HexStringHandler"/>
+<fullyQualifiedTypeName name="Rectangle"/>
+<fullyQualifiedTypeName name="SingingRectangle"/>
+<fullyQualifiedTypeName name="GoldCustomer"/>
+<fullyQualifiedTypeName name="PremiumCustomer"/>
+<fullyQualifiedTypeName name="SilverCustomer"/>
+<fullyQualifiedTypeName name="java.util.Currency"/>
 </qualifiedTypeNameHistroy>
